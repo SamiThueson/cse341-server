@@ -1,14 +1,11 @@
 var express = require('express');
 var app = express();
-var router = express.Router()
-const port = 3000;
 
-const route = router.get('/', function (req, res) {
-    res.send('Haley Johnston');
-});
+app.use('/', require('./routes'));
 
-app.use('/', route);
+const port = process.env.PORT || 3000
+const host = process.env.HOST || 'localhost'
 
 app.listen(port, function () {
-    console.log(`Listening on ${port}`);
+  console.log(`Listening on ${host}:${port}`);
 });
