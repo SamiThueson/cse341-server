@@ -25,15 +25,17 @@ content-type: application/json
 {
   "firstName": "Shari",
   "lastName": "Weaver",
-  "email": "sweaver@gmail.com",
-  "favoriteColor": "Hot Pink",
-  "birthday": "06/17/1969"
+  "email": "shari.weav@gmail.com",
+  "favoriteColor": "Black",
+  "birthday": "10/09/1969"
 }
 
 ### DELETE contact
-DELETE http://localhost:3000/contacts/64559ba0c6b6db577ccd8e79 HTTP/1.1
+DELETE http://localhost:3000/contacts/64559ce732cea1cb0b4b8b32 HTTP/1.1
+
 
 // Render
+
 ### GET contacts
 GET https://cse341-server-l2c2.onrender.com/contacts
 ### GET one contact
@@ -56,12 +58,12 @@ PUT https://cse341-server-l2c2.onrender.com/contacts/6448072d20a277817d1883b1
 content-type: application/json
 
 {
-  "firstName": "Shari",
-  "lastName": "Weaver",
-  "email": "sweaver@gmail.com",
-  "favoriteColor": "Hot Pink",
-  "birthday": "06/17/1969"
+  "firstName": "Tyson",
+  "lastName": "Thueson",
+  "email": "tt@gmail.com",
+  "favoriteColor": "blue",
+  "birthday": "12/06/1998"
 }
 
 ### DELETE contact
-DELETE https://cse341-server-l2c2.onrender.com/contacts/6448072d20a277817d1883b1
+DELETE https://cse341-server-l2c2.onrender.com/contacts/644807f720a277817d1883b4
