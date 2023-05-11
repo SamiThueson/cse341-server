@@ -1,7 +1,7 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
-const allContacts =  async (req, res, next) => {
+exports.allContacts =  async (req, res, next) => {
   const result = await mongodb.getDB().db().collection('contacts').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -9,7 +9,7 @@ const allContacts =  async (req, res, next) => {
   });
 };
 
-const oneContact = async (req, res, next) => {
+exports.oneContact = async (req, res, next) => {
   const userId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDB()
@@ -22,7 +22,7 @@ const oneContact = async (req, res, next) => {
   });
 };
 
-const createContact = async (req, res, next) => {
+exports.createContact = async (req, res, next) => {
   const newContact = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -42,7 +42,7 @@ const createContact = async (req, res, next) => {
   }
 };
 
-const updateContact = async (req, res, next) => {
+exports.updateContact = async (req, res, next) => {
   const userId = new ObjectId(req.params.id);
   const contact = {
     firstName: req.body.firstName,
@@ -63,7 +63,7 @@ const updateContact = async (req, res, next) => {
   }
 };
 
-const deleteContact = async (req, res, next) => {
+exports.deleteContact = async (req, res, next) => {
   const userId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDB()
@@ -76,5 +76,3 @@ const deleteContact = async (req, res, next) => {
     return res.status(500).json(result.error);
   }
 };
-
-module.exports = { allContacts, oneContact, createContact, updateContact, deleteContact };
