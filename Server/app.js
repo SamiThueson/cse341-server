@@ -16,7 +16,7 @@ app
 
 mongodb.initDB((err, mongodb) => {
   if (err) {
-    console.log(err);
+    console.log('Cannot connect to the database!', err);
   } else {
     app.listen(port);
     console.log(`Connected to DB and listening on ${host}:${port}`);
